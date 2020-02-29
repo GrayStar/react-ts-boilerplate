@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from 'react';
+import React, { FC, useState, useEffect, useCallback } from 'react';
 
 import ErrorDisplay from '@/components/error-display';
 
@@ -16,21 +16,23 @@ const AsyncPage: FC<AsyncPageProps> = ({ children, fetchData }) => {
 	const [fetchPageDataError, setFetchPageDataError] = useState(undefined);
 	const [displayState, setDisplayState] = useState(DISPLAY_STATES.LOADING);
 
-	useEffect(() => {
-		async function fetchPageData() {
-			setDisplayState(DISPLAY_STATES.LOADING);
+	const fetchPageData = useCallback(async () => {
+		setDisplayState(DISPLAY_STATES.LOADING);
+		setFetchPageDataError(undefined);
 
-			try {
-				await fetchData();
-				setDisplayState(DISPLAY_STATES.SUCCESS);
-			} catch (error) {
-				setFetchPageDataError(error);
-				setDisplayState(DISPLAY_STATES.ERROR);
-			}
+		try {
+			await fetchData();
+			setDisplayState(DISPLAY_STATES.SUCCESS);
+		} catch (error) {
+			setFetchPageDataError(error);
+			setDisplayState(DISPLAY_STATES.ERROR);
 		}
-
-		fetchPageData();
 	}, [fetchData]);
+
+	useEffect(() => {
+		fetchPageData();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 
 	function getDisplayState() {
 		switch (displayState) {
@@ -39,7 +41,14 @@ const AsyncPage: FC<AsyncPageProps> = ({ children, fetchData }) => {
 			case DISPLAY_STATES.SUCCESS:
 				return children;
 			case DISPLAY_STATES.ERROR:
-				return <ErrorDisplay error={fetchPageDataError} />;
+				return (
+					<ErrorDisplay
+						error={fetchPageDataError}
+						showBackButton={true}
+						showRetryButton={true}
+						onRetryButtonClick={fetchPageData}
+					/>
+				);
 			default:
 				return <></>;
 		}

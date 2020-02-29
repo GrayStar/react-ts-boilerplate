@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
+import { useHistory } from 'react-router-dom';
 import { createUseStyles } from 'react-jss';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Button, Container, Row, Col } from 'react-bootstrap';
 
 import colors from '@/jss/colors';
 import fonts from '@/jss/fonts';
@@ -18,10 +19,27 @@ const useErrorDisplayStyles = createUseStyles({
 
 interface ErrorDisplayProps {
 	error: any;
+	showBackButton?: boolean;
+	showRetryButton?: boolean;
+	onRetryButtonClick?(): void;
 }
 
-const ErrorDisplay: FC<ErrorDisplayProps> = ({ error }) => {
+const ErrorDisplay: FC<ErrorDisplayProps> = ({
+	error,
+	showBackButton,
+	showRetryButton,
+	onRetryButtonClick,
+}) => {
+	const history = useHistory();
 	const classes = useErrorDisplayStyles();
+
+	function handleGoBackButtonClick() {
+		history.goBack();
+	}
+
+	function handleRetryClick() {
+		if (onRetryButtonClick) onRetryButtonClick();
+	}
 
 	function getDevError() {
 		if (process.env.NODE_ENV !== 'development') {
@@ -40,6 +58,18 @@ const ErrorDisplay: FC<ErrorDisplayProps> = ({ error }) => {
 			<Row>
 				<Col>
 					<h1>Error Occurred</h1>
+				</Col>
+			</Row>
+			<Row>
+				<Col>
+					{showBackButton && (
+						<Button onClick={handleGoBackButtonClick}>
+							Go Back
+						</Button>
+					)}
+					{showRetryButton && (
+						<Button onClick={handleRetryClick}>Retry</Button>
+					)}
 				</Col>
 			</Row>
 			<Row>
