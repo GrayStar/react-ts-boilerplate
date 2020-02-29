@@ -1,5 +1,5 @@
-import colors from './colors';
-import fonts from './fonts';
+import colors from '@/jss/colors';
+import fonts from '@/jss/fonts';
 
 const globalStyles = {
 	'@global': {

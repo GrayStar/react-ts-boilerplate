@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import Header from '../components/header';
-import Footer from '../components/footer';
-import Index from '../pages/index';
-import About from '../pages/about';
+import Header from '@/components/header';
+import Footer from '@/components/footer';
+import Index from '@/pages/index';
+import About from '@/pages/about';
 
 const Navigator: FC = () => {
 	return (

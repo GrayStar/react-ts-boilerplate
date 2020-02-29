@@ -1,27 +1,35 @@
 import React, { FC, createContext, useState } from 'react';
 import { ThemeProvider as JssProvider } from 'react-jss';
 
-const ThemeContext = createContext({});
+import defaultTheme from '@/jss/themes/default';
 
-const initialState = {
-	_themeName: 'hackett',
-	primaryColor: '#000000',
+export type ThemeConfig = {
+	_themeName: string;
+	primary: string;
 };
 
+export type ThemeContextConfig = {
+	theme: Partial<ThemeConfig>;
+	setThemeToDtp(): void;
+	setThemeToOracle(): void;
+};
+
+const ThemeContext = createContext({} as ThemeContextConfig);
+
 const ThemeProvider: FC = (props) => {
-	const [theme, setTheme] = useState(initialState);
+	const [theme, setTheme] = useState<ThemeConfig>(defaultTheme);
 
 	function setThemeToDtp() {
 		setTheme({
 			_themeName: 'dtp',
-			primaryColor: '#00FF00',
+			primary: '#00FF00',
 		});
 	}
 
 	function setThemeToOracle() {
 		setTheme({
 			_themeName: 'oracle',
-			primaryColor: '#FF0000',
+			primary: '#FF0000',
 		});
 	}
 

@@ -1,10 +1,11 @@
 import React, { FC } from 'react';
 import { createUseStyles } from 'react-jss';
+import { ThemeConfig } from '@/contexts/theme-context';
 
-const useFooterStyles = createUseStyles((theme: any) => ({
+const useFooterStyles = createUseStyles((theme: ThemeConfig) => ({
 	footer: {
 		color: 'white',
-		backgroundColor: `${theme.primaryColor}`,
+		backgroundColor: `${theme.primary}`,
 	},
 }));
 
