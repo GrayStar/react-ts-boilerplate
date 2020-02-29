@@ -3,7 +3,7 @@ import Cookies from 'js-cookie';
 import { useHistory } from 'react-router-dom';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 
-import { ROUTES } from '@/core/navigator';
+import { ROUTES } from '@/components/navigator';
 
 const Login: FC = () => {
 	const history = useHistory();

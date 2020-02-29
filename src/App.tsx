@@ -3,7 +3,7 @@ import { createUseStyles } from 'react-jss';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import { ThemeProvider } from '@/contexts/theme-context';
-import Navigator from '@/core/navigator';
+import Navigator from '@/components/navigator';
 
 import globalStyles from '@/jss/global';
 

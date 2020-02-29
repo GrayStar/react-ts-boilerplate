@@ -6,6 +6,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { ThemeConfig } from '@/contexts/theme-context';
 
 import ThemeSelect from '@/components/theme-select';
+import { ROUTES } from '@/components/navigator';
 
 const useIndexStyles = createUseStyles((theme: ThemeConfig) => {
 	return {
@@ -23,7 +24,7 @@ const Index: FC = () => {
 			<Row>
 				<Col>
 					<h1 className={classes.customH1}>Index Page</h1>
-					<Link to="/about">About</Link>
+					<Link to={ROUTES.ABOUT}>About</Link>
 				</Col>
 			</Row>
 			<Row>
