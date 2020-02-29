@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 
 import AsyncPage from '@/components/async-page';
+import { ROUTES } from '@/components/navigator';
 
 import { pokeService } from '@/lib/services';
 
@@ -23,7 +24,7 @@ const About = () => {
 				<Row>
 					<Col>
 						<h1>{pokemonDetails ? pokemonDetails.name : ''}</h1>
-						<Link to="/">Home</Link>
+						<Link to={ROUTES.HOME}>Home</Link>
 					</Col>
 				</Row>
 			</Container>
