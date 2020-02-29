@@ -1,5 +1,7 @@
 import React, { FC, useState, useEffect } from 'react';
 
+import ErrorDisplay from '@/components/error-display';
+
 enum DISPLAY_STATES {
 	LOADING = 'LOADING',
 	SUCCESS = 'SUCCESS',
@@ -11,6 +13,7 @@ interface AsyncPageProps {
 }
 
 const AsyncPage: FC<AsyncPageProps> = ({ children, fetchData }) => {
+	const [fetchPageDataError, setFetchPageDataError] = useState(undefined);
 	const [displayState, setDisplayState] = useState(DISPLAY_STATES.LOADING);
 
 	useEffect(() => {
@@ -21,6 +24,7 @@ const AsyncPage: FC<AsyncPageProps> = ({ children, fetchData }) => {
 				await fetchData();
 				setDisplayState(DISPLAY_STATES.SUCCESS);
 			} catch (error) {
+				setFetchPageDataError(error);
 				setDisplayState(DISPLAY_STATES.ERROR);
 			}
 		}
@@ -35,7 +39,7 @@ const AsyncPage: FC<AsyncPageProps> = ({ children, fetchData }) => {
 			case DISPLAY_STATES.SUCCESS:
 				return children;
 			case DISPLAY_STATES.ERROR:
-				return <p>Error</p>;
+				return <ErrorDisplay error={fetchPageDataError} />;
 			default:
 				return <></>;
 		}
