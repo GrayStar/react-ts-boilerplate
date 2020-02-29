@@ -1,12 +1,14 @@
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { createUseStyles } from 'react-jss';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 
 import { ThemeConfig } from '@/contexts/theme-context';
 
 import ThemeSelect from '@/components/theme-select';
 import { ROUTES } from '@/components/navigator';
+
+import { pokeService } from '@/lib/services';
 
 const useIndexStyles = createUseStyles((theme: ThemeConfig) => {
 	return {
@@ -19,6 +21,15 @@ const useIndexStyles = createUseStyles((theme: ThemeConfig) => {
 const Index: FC = () => {
 	const classes = useIndexStyles();
 
+	async function handleGetPokemonButtonClick() {
+		try {
+			const { results } = await pokeService.getPokemon.fetch();
+			console.log(results);
+		} catch (error) {
+			console.error(error);
+		}
+	}
+
 	return (
 		<Container>
 			<Row>
@@ -30,6 +41,13 @@ const Index: FC = () => {
 			<Row>
 				<Col>
 					<ThemeSelect />
+				</Col>
+			</Row>
+			<Row>
+				<Col>
+					<Button onClick={handleGetPokemonButtonClick}>
+						Get Pokemon
+					</Button>
 				</Col>
 			</Row>
 		</Container>

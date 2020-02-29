@@ -1,7 +1,7 @@
 import { HttpClient } from '@/lib/http-client';
 import Cookies from 'js-cookie';
 
-export const httpService = new HttpClient({
+export const httpSingleton = new HttpClient({
 	baseUrl: process.env.BASE_URL,
 	defaultHeaders: {
 		'X-Locale': 'en-US',
