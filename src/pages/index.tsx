@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { createUseStyles } from 'react-jss';
 import { Container, Row, Col, Button } from 'react-bootstrap';
@@ -20,11 +20,12 @@ const useIndexStyles = createUseStyles((theme: ThemeConfig) => {
 
 const Index: FC = () => {
 	const classes = useIndexStyles();
+	const [pokemon, setPokemon] = useState<any[]>([]);
 
 	async function handleGetPokemonButtonClick() {
 		try {
-			const { results } = await pokeService.getPokemon.fetch();
-			console.log(results);
+			const { results } = await pokeService.pokemon().fetch();
+			setPokemon(results);
 		} catch (error) {
 			console.error(error);
 		}
@@ -48,6 +49,17 @@ const Index: FC = () => {
 					<Button onClick={handleGetPokemonButtonClick}>
 						Get Pokemon
 					</Button>
+					<ul>
+						{pokemon.map((pokemon, index: number) => {
+							return (
+								<li key={index}>
+									<Link to={`/about/${pokemon.name}`}>
+										{pokemon.name}
+									</Link>
+								</li>
+							);
+						})}
+					</ul>
 				</Col>
 			</Row>
 		</Container>

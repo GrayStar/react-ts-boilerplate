@@ -12,7 +12,7 @@ import About from '@/pages/about';
 export enum ROUTES {
 	LOGIN = '/login',
 	HOME = '/',
-	ABOUT = '/about',
+	ABOUT = '/about/:name',
 }
 
 const Navigator: FC = () => {

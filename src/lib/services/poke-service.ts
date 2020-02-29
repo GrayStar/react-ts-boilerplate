@@ -1,8 +1,16 @@
 import { httpSingleton } from '@/lib/singletons/http-singleton';
 
 export const pokeService = {
-	getPokemon: httpSingleton.orchestrateRequest({
-		method: 'get',
-		url: '/pokemon',
-	}),
+	pokemon() {
+		return httpSingleton.orchestrateRequest({
+			method: 'get',
+			url: '/pokemon',
+		});
+	},
+	pokemonDetails(name: string) {
+		return httpSingleton.orchestrateRequest({
+			method: 'get',
+			url: `/pokemon/${name}`,
+		});
+	},
 };
