@@ -1,5 +1,6 @@
 import React, { FC, useState, useEffect, useCallback } from 'react';
 
+import Loader from '@/components/loader';
 import ErrorDisplay from '@/components/error-display';
 
 enum DISPLAY_STATES {
@@ -37,7 +38,7 @@ const AsyncPage: FC<AsyncPageProps> = ({ children, fetchData }) => {
 	function getDisplayState() {
 		switch (displayState) {
 			case DISPLAY_STATES.LOADING:
-				return <p>Loading...</p>;
+				return <Loader />;
 			case DISPLAY_STATES.SUCCESS:
 				return children;
 			case DISPLAY_STATES.ERROR:
