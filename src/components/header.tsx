@@ -5,6 +5,7 @@ import { ThemeConfig } from '@/contexts/theme-context';
 const useHeaderStyles = createUseStyles((theme: ThemeConfig) => ({
 	header: {
 		color: 'white',
+		padding: '32px 50px',
 		backgroundColor: `${theme.primary}`,
 	},
 }));
