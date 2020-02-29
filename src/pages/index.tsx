@@ -1,9 +1,11 @@
-import React, { FC, useContext } from 'react';
+import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { createUseStyles } from 'react-jss';
 import { Container, Row, Col } from 'react-bootstrap';
 
-import { ThemeContext, ThemeConfig } from '@/contexts/theme-context';
+import { ThemeConfig } from '@/contexts/theme-context';
+
+import ThemeSelect from '@/components/theme-select';
 
 const useIndexStyles = createUseStyles((theme: ThemeConfig) => {
 	return {
@@ -14,16 +16,7 @@ const useIndexStyles = createUseStyles((theme: ThemeConfig) => {
 });
 
 const Index: FC = () => {
-	const themeContext = useContext(ThemeContext);
 	const classes = useIndexStyles();
-
-	function handleDtpThemeButtonClick() {
-		themeContext.setThemeToDtp();
-	}
-
-	function handleOracleThemeButtonClick() {
-		themeContext.setThemeToOracle();
-	}
 
 	return (
 		<Container>
@@ -35,12 +28,7 @@ const Index: FC = () => {
 			</Row>
 			<Row>
 				<Col>
-					<button onClick={handleDtpThemeButtonClick}>
-						DTP Theme
-					</button>
-					<button onClick={handleOracleThemeButtonClick}>
-						Oracle Theme
-					</button>
+					<ThemeSelect />
 				</Col>
 			</Row>
 		</Container>

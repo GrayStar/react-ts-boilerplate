@@ -22,14 +22,14 @@ const ThemeProvider: FC = (props) => {
 	function setThemeToDtp() {
 		setTheme({
 			_themeName: 'dtp',
-			primary: '#00FF00',
+			primary: '#00872A',
 		});
 	}
 
 	function setThemeToOracle() {
 		setTheme({
 			_themeName: 'oracle',
-			primary: '#FF0000',
+			primary: '#B7070D',
 		});
 	}
 
