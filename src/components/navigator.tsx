@@ -8,6 +8,7 @@ import Footer from '@/components/footer';
 import Login from '@/pages/login';
 import Index from '@/pages/index';
 import About from '@/pages/about';
+import NoMatch from '@/pages/no-match';
 
 export enum ROUTES {
 	LOGIN = '/login',
@@ -29,6 +30,9 @@ const Navigator: FC = () => {
 				<PrivateRoute exact path={ROUTES.ABOUT}>
 					<About />
 				</PrivateRoute>
+				<Route path="*">
+					<NoMatch />
+				</Route>
 			</Switch>
 			<Footer />
 		</>
