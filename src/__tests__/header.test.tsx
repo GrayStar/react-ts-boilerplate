@@ -1,10 +1,10 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import Index from '@/pages/index';
+import Header from '@/components/header';
 
 test('renders "Index Page" header', () => {
-	const { getByText } = render(<Index />);
-	const headerElement = getByText(/Index Page/i);
+	const { getByText } = render(<Header />);
+	const headerElement = getByText(/Header/i);
 	expect(headerElement).toBeInTheDocument();
 });
