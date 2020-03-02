@@ -41,14 +41,8 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 ### `npm run start`
 
 Starts the node server.<br />
-Server runs at [http://localhost:8080](http://localhost:8080).
+Server runs at locally on port `8080`.
 
-Package.json contains a proxy to port 8080 so the react-app running on port 3000 can communicate with it.<br/>
-In order to test communications, you must run both the react-app and the node server in seperate terminal windows.<br />
-It is NOT required to run the node server while working on the react-app.
+The node server is currently only used to populate configuration (`process.env`) variables at render time in production. It does not need to be running during local development, as default configuration variables are provided by `@/lib/config/constants`.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+If you ever need to test your code against the server, create a production build of the react app using `npm run build`. Then start the node server point your browser to [http://localhost:8080](http://localhost:8080).
