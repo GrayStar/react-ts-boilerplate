@@ -3,14 +3,11 @@ const bodyParser = require('body-parser');
 const path = require('path');
 
 const port = process.env.PORT || 8080;
-const isProd = process.env.NODE_ENV === 'production';
-const reactAppDirectoryName = isProd ? 'build' : 'public';
-
 const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, reactAppDirectoryName)));
+app.use(express.static(path.join(__dirname, 'build')));
 
 app.get('/health-check', (_req, res) => {
 	res.send('OK');
@@ -24,7 +21,7 @@ app.get('/configuration', (_req, res) => {
 });
 
 app.get('*', (_req, res) => {
-	res.sendFile(path.join(__dirname, reactAppDirectoryName, 'index.html'));
+	res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
 app.listen(port, () => {

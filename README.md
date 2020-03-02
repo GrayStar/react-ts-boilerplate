@@ -38,13 +38,13 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-### `npm run start:dev` and `npm run start:prod`
+### `npm run start`
 
-Starts the node server in either development or production mode.<br />
+Starts the node server.<br />
 Server runs at [http://localhost:8080](http://localhost:8080).
 
 Package.json contains a proxy to port 8080 so the react-app running on port 3000 can communicate with it.<br/>
-In order to test communications, you must run both the react-app and the node server in seperate terminal windows.
+In order to test communications, you must run both the react-app and the node server in seperate terminal windows.<br />
 It is NOT required to run the node server while working on the react-app.
 
 ## Learn More
