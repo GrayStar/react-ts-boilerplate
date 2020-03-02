@@ -43,7 +43,9 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 Starts the node server in either development or production mode.<br />
 Server runs at [http://localhost:8080](http://localhost:8080).
 
-package.json contains a proxy to port 8080 so the react-app running on port 3000 can communicate with it.
+Package.json contains a proxy to port 8080 so the react-app running on port 3000 can communicate with it.<br/>
+In order to test communications, you must run both the react-app and the node server in seperate terminal windows.
+It is NOT required to run the node server while working on the react-app.
 
 ## Learn More
 
