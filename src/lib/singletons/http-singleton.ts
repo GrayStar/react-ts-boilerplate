@@ -1,8 +1,9 @@
 import { HttpClient } from '@/lib/http-client';
 import Cookies from 'js-cookie';
+import config from '@/lib/config';
 
 export const httpSingleton = new HttpClient({
-	baseUrl: process.env.REACT_APP_BASE_URL,
+	baseUrl: config.REACT_TS_BASE_URL,
 	defaultHeaders: {
 		'X-Locale': 'en-US',
 		'X-Time-Zone': 'America/New_York',
