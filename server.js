@@ -56,9 +56,5 @@ app.get('*', (_req, res) => {
 });
 
 app.listen(port, () => {
-	console.log(
-		'> App Ready on http://localhost:%d in %s mode',
-		port,
-		process.env.NODE_ENV
-	);
+	console.log(`> App Ready on http://localhost:${port}.`);
 });
