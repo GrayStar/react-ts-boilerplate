@@ -10,26 +10,36 @@ const BrowseResourcesNavigator: FC = () => {
 
 	return (
 		<>
-			<NavigationSub navigationItems={[{
-				to: `${NAVIGATOR_ROOT}/strategy-and-organization/research`,
-				title: 'Research',
-			}, {
-				to: `${NAVIGATOR_ROOT}/strategy-and-organization/best-practices`,
-				title: 'Best Practices',
-			}, {
-				to: `${NAVIGATOR_ROOT}/strategy-and-organization/performance-metrics`,
-				title: 'Performance Metrics',
-			}, {
-				to: `${NAVIGATOR_ROOT}/strategy-and-organization/playbooks`,
-				title: 'Playbooks',
-			}, {
-				to: `${NAVIGATOR_ROOT}/strategy-and-organization/process-flows`,
-				title: 'Process Flows',
-			}]} />
+			<NavigationSub
+				navigationItems={[
+					{
+						to: `${NAVIGATOR_ROOT}/strategy-and-organization/research`,
+						title: 'Research',
+					},
+					{
+						to: `${NAVIGATOR_ROOT}/strategy-and-organization/best-practices`,
+						title: 'Best Practices',
+					},
+					{
+						to: `${NAVIGATOR_ROOT}/strategy-and-organization/performance-metrics`,
+						title: 'Performance Metrics',
+					},
+					{
+						to: `${NAVIGATOR_ROOT}/strategy-and-organization/playbooks`,
+						title: 'Playbooks',
+					},
+					{
+						to: `${NAVIGATOR_ROOT}/strategy-and-organization/process-flows`,
+						title: 'Process Flows',
+					},
+				]}
+			/>
 
 			<Switch>
 				<PrivateRoute exact path={NAVIGATOR_ROOT}>
-					<Redirect to={`${NAVIGATOR_ROOT}/strategy-and-organization/research`} />
+					<Redirect
+						to={`${NAVIGATOR_ROOT}/strategy-and-organization/research`}
+					/>
 				</PrivateRoute>
 				<PrivateRoute exact path={`${NAVIGATOR_ROOT}/:topic/:section`}>
 					<p>TODO: Browse Resourses template</p>

@@ -31,13 +31,13 @@ const Navigator: FC = () => {
 					<About />
 				</PrivateRoute>
 
-				<PrivateRoute path='/browse-resources'>
+				<PrivateRoute path="/browse-resources">
 					<BrowseResourcesNavigator />
 				</PrivateRoute>
-				<PrivateRoute path='/engagement'>
+				<PrivateRoute path="/engagement">
 					<EngagementNavigator />
 				</PrivateRoute>
-				<PrivateRoute path='/events'>
+				<PrivateRoute path="/events">
 					<EventsNavigator />
 				</PrivateRoute>
 

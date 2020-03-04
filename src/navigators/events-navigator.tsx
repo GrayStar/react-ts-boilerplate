@@ -10,13 +10,18 @@ const EventsNavigator: FC = () => {
 
 	return (
 		<>
-			<NavigationSub navigationItems={[{
-				to: `${NAVIGATOR_ROOT}/browse-events`,
-				title: 'Browse Events',
-			}, {
-				to: `${NAVIGATOR_ROOT}/performance-studies`,
-				title: 'Performance Studies',
-			}]} />
+			<NavigationSub
+				navigationItems={[
+					{
+						to: `${NAVIGATOR_ROOT}/browse-events`,
+						title: 'Browse Events',
+					},
+					{
+						to: `${NAVIGATOR_ROOT}/performance-studies`,
+						title: 'Performance Studies',
+					},
+				]}
+			/>
 
 			<Switch>
 				<PrivateRoute exact path={`${NAVIGATOR_ROOT}`}>
@@ -25,7 +30,10 @@ const EventsNavigator: FC = () => {
 				<PrivateRoute exact path={`${NAVIGATOR_ROOT}/browse-events`}>
 					<p>TODO: Events - Browse Events template</p>
 				</PrivateRoute>
-				<PrivateRoute exact path={`${NAVIGATOR_ROOT}/performance-studies`}>
+				<PrivateRoute
+					exact
+					path={`${NAVIGATOR_ROOT}/performance-studies`}
+				>
 					<p>TODO: Events - Performance Studies template</p>
 				</PrivateRoute>
 				<PrivateRoute path={`${NAVIGATOR_ROOT}/*`}>

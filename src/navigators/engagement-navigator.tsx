@@ -10,13 +10,18 @@ const EngagementNavigator: FC = () => {
 
 	return (
 		<>
-			<NavigationSub navigationItems={[{
-				to: `${NAVIGATOR_ROOT}/dashboard`,
-				title: 'Dashboard',
-			}, {
-				to: `${NAVIGATOR_ROOT}/engagement-plan`,
-				title: 'Engagement Plan',
-			}]} />
+			<NavigationSub
+				navigationItems={[
+					{
+						to: `${NAVIGATOR_ROOT}/dashboard`,
+						title: 'Dashboard',
+					},
+					{
+						to: `${NAVIGATOR_ROOT}/engagement-plan`,
+						title: 'Engagement Plan',
+					},
+				]}
+			/>
 
 			<Switch>
 				<PrivateRoute exact path={NAVIGATOR_ROOT}>
