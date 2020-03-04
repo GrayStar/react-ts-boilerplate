@@ -20,6 +20,7 @@ const useNavigationLinkStyles = createUseStyles({
 
 interface NavigationLinkProps {
     to: string;
+    className?: string;
 };
 
 const NavigationLink: FC<NavigationLinkProps> = (props) => {
@@ -27,9 +28,19 @@ const NavigationLink: FC<NavigationLinkProps> = (props) => {
         isActive: !!useRouteMatch(props.to),
     });
 
+    function getClassNames() {
+        const classNames = [classes.navigationLink];
+
+        if (props.className) {
+            classNames.push(props.className);
+        }
+
+        return classNames.join(' ');
+    }
+
     return (
         <div className={classes.navigationLinkOuter}>
-            <Link to={props.to} className={classes.navigationLink}>{props.children}</Link>
+            <Link to={props.to} className={getClassNames()}>{props.children}</Link>
         </div>
     );
 }

@@ -8,6 +8,7 @@ import colors from '@/jss/colors';
 const useNavigationSubStyles = createUseStyles({
 	navigationSub: {
         padding: 16,
+        display: 'flex',
         backgroundColor: `${colors.gray400}`,
 	},
 });
