@@ -9,13 +9,14 @@ interface UseNavigationLinkStylesProps {
 }
 
 const useNavigationLinkStyles = createUseStyles({
-	navigationLinkOuter: ({ isActive }: UseNavigationLinkStylesProps) => ({
-		backgroundColor: isActive ? colors.gray300 : 'transparent',
+	navigationLink: ({ isActive }: UseNavigationLinkStylesProps) => ({
+		backgroundColor: isActive ? colors.gray400 : 'transparent',
+		'& a': {
+			padding: 16,
+			display: 'block',
+			color: colors.black,
+		},
 	}),
-	navigationLink: {
-		padding: 16,
-		display: 'block',
-	},
 });
 
 interface NavigationLinkProps {
@@ -39,10 +40,8 @@ const NavigationLink: FC<NavigationLinkProps> = (props) => {
 	}
 
 	return (
-		<div className={classes.navigationLinkOuter}>
-			<Link to={props.to} className={getClassNames()}>
-				{props.children}
-			</Link>
+		<div className={getClassNames()}>
+			<Link to={props.to}>{props.children}</Link>
 		</div>
 	);
 };

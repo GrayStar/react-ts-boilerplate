@@ -4,11 +4,12 @@ import { createUseStyles } from 'react-jss';
 import { ThemeConfig } from '@/contexts/theme-context';
 import NavigationMain from '@/components/navigation-main';
 
+import colors from '@/jss/colors';
+
 const useHeaderStyles = createUseStyles((theme: ThemeConfig) => ({
 	header: {
-		color: 'white',
-		padding: '32px 50px',
-		backgroundColor: `${theme.primary}`,
+		padding: 16,
+		backgroundColor: `${colors.gray200}`,
 	},
 }));
 

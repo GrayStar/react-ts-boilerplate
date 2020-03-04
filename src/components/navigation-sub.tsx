@@ -9,7 +9,8 @@ const useNavigationSubStyles = createUseStyles({
 	navigationSub: {
 		padding: 16,
 		display: 'flex',
-		backgroundColor: `${colors.gray400}`,
+		backgroundColor: colors.white,
+		borderBottom: `1px solid ${colors.gray200}`,
 	},
 });
 
