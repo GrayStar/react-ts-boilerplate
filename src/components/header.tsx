@@ -1,6 +1,9 @@
 import React, { FC } from 'react';
 import { createUseStyles } from 'react-jss';
+
 import { ThemeConfig } from '@/contexts/theme-context';
+import NavigationMain from '@/components/navigation-main';
+
 
 const useHeaderStyles = createUseStyles((theme: ThemeConfig) => ({
 	header: {
@@ -13,7 +16,12 @@ const useHeaderStyles = createUseStyles((theme: ThemeConfig) => ({
 const Header: FC = () => {
 	const classes = useHeaderStyles();
 
-	return <header className={classes.header}>Header</header>;
+	return (
+		<header className={classes.header}>
+			<h1>Header</h1>
+			<NavigationMain />
+		</header>
+	);
 };
 
 export default Header;

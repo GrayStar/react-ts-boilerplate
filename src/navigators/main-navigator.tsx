@@ -5,16 +5,16 @@ import PrivateRoute from '@/components/private-route';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 
+import BrowseResourcesNavigator from '@/navigators/browse-resources-navigator';
+import EngagementNavigator from '@/navigators/engagement-navigator';
+import EventsNavigator from '@/navigators/events-navigator';
+
 import Login from '@/pages/login';
 import Index from '@/pages/index';
 import About from '@/pages/about';
 import NoMatch from '@/pages/no-match';
 
-export enum ROUTES {
-	LOGIN = '/login',
-	HOME = '/',
-	ABOUT = '/about/:name',
-}
+import { ROUTES } from './routes';
 
 const Navigator: FC = () => {
 	return (
@@ -30,6 +30,17 @@ const Navigator: FC = () => {
 				<PrivateRoute exact path={ROUTES.ABOUT}>
 					<About />
 				</PrivateRoute>
+
+				<PrivateRoute path='/browse-resources'>
+					<BrowseResourcesNavigator />
+				</PrivateRoute>
+				<PrivateRoute path='/engagement'>
+					<EngagementNavigator />
+				</PrivateRoute>
+				<PrivateRoute path='/events'>
+					<EventsNavigator />
+				</PrivateRoute>
+
 				<Route path="*">
 					<NoMatch />
 				</Route>

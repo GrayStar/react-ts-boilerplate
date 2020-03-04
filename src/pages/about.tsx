@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 
 import AsyncPage from '@/components/async-page';
-import { ROUTES } from '@/components/navigator';
+import { ROUTES } from '@/navigators/routes';
 
 import { pokeService } from '@/lib/services';
 
