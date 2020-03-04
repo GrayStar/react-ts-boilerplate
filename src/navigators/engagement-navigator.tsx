@@ -3,13 +3,21 @@ import { Switch, Redirect } from 'react-router-dom';
 
 import PrivateRoute from '@/components/private-route';
 import NoMatch from '@/pages/no-match';
+import NavigationSub from '@/components/navigation-sub';
 
 const EngagementNavigator: FC = () => {
 	const NAVIGATOR_ROOT = '/engagement';
 
 	return (
 		<>
-			<div>TODO: Engagement SubNavigation</div>
+			<NavigationSub navigationItems={[{
+				to: `${NAVIGATOR_ROOT}/dashboard`,
+				title: 'Dashboard',
+			}, {
+				to: `${NAVIGATOR_ROOT}/engagement-plan`,
+				title: 'Engagement Plan',
+			}]} />
+
 			<Switch>
 				<PrivateRoute exact path={NAVIGATOR_ROOT}>
 					<Redirect to={`${NAVIGATOR_ROOT}/dashboard`} />

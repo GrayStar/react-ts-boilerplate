@@ -3,13 +3,21 @@ import { Switch, Redirect } from 'react-router-dom';
 
 import PrivateRoute from '@/components/private-route';
 import NoMatch from '@/pages/no-match';
+import NavigationSub from '@/components/navigation-sub';
 
 const EventsNavigator: FC = () => {
 	const NAVIGATOR_ROOT = '/events';
 
 	return (
 		<>
-			<div>TODO: Events SubNavigation</div>
+			<NavigationSub navigationItems={[{
+				to: `${NAVIGATOR_ROOT}/browse-events`,
+				title: 'Browse Events',
+			}, {
+				to: `${NAVIGATOR_ROOT}/performance-studies`,
+				title: 'Performance Studies',
+			}]} />
+
 			<Switch>
 				<PrivateRoute exact path={`${NAVIGATOR_ROOT}`}>
 					<Redirect to={`${NAVIGATOR_ROOT}/browse-events`} />

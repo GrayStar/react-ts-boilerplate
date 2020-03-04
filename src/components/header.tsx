@@ -4,7 +4,6 @@ import { createUseStyles } from 'react-jss';
 import { ThemeConfig } from '@/contexts/theme-context';
 import NavigationMain from '@/components/navigation-main';
 
-
 const useHeaderStyles = createUseStyles((theme: ThemeConfig) => ({
 	header: {
 		color: 'white',
