@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
-import { Link } from 'react-router-dom';
 import { createUseStyles } from 'react-jss';
+
+import NavigationLink from '@/components/navigation-link';
 
 import colors from '@/jss/colors';
 
@@ -25,15 +26,13 @@ const NavigationSub: FC<NavigationSubProps> = ({ navigationItems }) => {
 
     return (
         <nav className={classes.navigationSub}>
-            <ul>
-                {navigationItems.map((navigationItem: NavigationItem, index: number) => {
-                    return (
-                        <li key={index}>
-                            <Link to={navigationItem.to}>{navigationItem.title}</Link>
-                        </li>
-                    );
-                })}
-            </ul>
+            {navigationItems.map((navigationItem: NavigationItem, index: number) => {
+                return (
+                    <NavigationLink key={index} to={navigationItem.to}>
+                        {navigationItem.title}
+                    </NavigationLink>
+                );
+            })}
         </nav>
     );
 };

@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useRouteMatch } from 'react-router-dom';
 import { createUseStyles } from 'react-jss';
 
 import colors from '@/jss/colors';
@@ -9,25 +9,27 @@ interface UseNavigationLinkStylesProps {
 }
 
 const useNavigationLinkStyles = createUseStyles({
-	navigationLink: {
+	navigationLinkOuter: ({ isActive }: UseNavigationLinkStylesProps) => ({
+        backgroundColor: isActive ? colors.gray300 : 'transparent',
+    }),
+    navigationLink: {
         padding: 16,
-        backgroundColor: `${({ isActive }: UseNavigationLinkStylesProps) => isActive ? colors.gray500 : 'transparent' }`,
-	},
+        display: 'block',
+    },
 });
 
 interface NavigationLinkProps {
     to: string;
-    isActive: boolean;
 };
 
 const NavigationLink: FC<NavigationLinkProps> = (props) => {
     const classes = useNavigationLinkStyles({
-        isActive: props.isActive,
+        isActive: !!useRouteMatch(props.to),
     });
 
     return (
-        <div className={classes.navigationLink}>
-            <Link to={props.to}>{props.children}</Link>
+        <div className={classes.navigationLinkOuter}>
+            <Link to={props.to} className={classes.navigationLink}>{props.children}</Link>
         </div>
     );
 }
