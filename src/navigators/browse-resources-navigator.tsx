@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Switch, Redirect } from 'react-router-dom';
+import { Switch, Redirect, Link } from 'react-router-dom';
 
 import PrivateRoute from '@/components/private-route';
 import NoMatch from '@/pages/no-match';
@@ -9,7 +9,25 @@ const BrowseResourcesNavigator: FC = () => {
 
 	return (
 		<>
-			<div>TODO: Browse Resources SubNavigation</div>
+			<nav>
+				<ul>
+					<li>
+						<Link to={`${NAVIGATOR_ROOT}/strategy-and-organization/research`}>Research</Link>
+					</li>
+					<li>
+						<Link to={`${NAVIGATOR_ROOT}/strategy-and-organization/best-practices`}>BP</Link>
+					</li>
+					<li>
+						<Link to={`${NAVIGATOR_ROOT}/strategy-and-organization/performance-metrics`}>PM</Link>
+					</li>
+					<li>
+						<Link to={`${NAVIGATOR_ROOT}/strategy-and-organization/playbook`}>PB</Link>
+					</li>
+					<li>
+						<Link to={`${NAVIGATOR_ROOT}/strategy-and-organization/process-flows`}>PF</Link>
+					</li>
+				</ul>
+			</nav>
 			<Switch>
 				<PrivateRoute exact path={NAVIGATOR_ROOT}>
 					<Redirect to={`${NAVIGATOR_ROOT}/strategy-and-organization/research`} />
