@@ -1,18 +1,35 @@
 import React, { FC } from 'react';
-import { Link } from 'react-router-dom';
+import { useRouteMatch } from 'react-router-dom';
+
+import NavigationLink from '@/components/navigation-link';
 
 const NavigationMain: FC = () => {
     return (
         <nav>
             <ul>
                 <li>
-                    <Link to='/browse-resources'>Browse Resources</Link>
+                    <NavigationLink
+                        to='/browse-resources'
+                        isActive={!!useRouteMatch('/browse-resources')}
+                    >
+                        Browse Resources
+                    </NavigationLink>
                 </li>
                 <li>
-                    <Link to='/engagement'>Engagement</Link>
+                    <NavigationLink
+                        to='/engagement'
+                        isActive={!!useRouteMatch('/engagement')}
+                    >
+                        Engagement
+                    </NavigationLink>
                 </li>
                 <li>
-                    <Link to='/events'>Events</Link>
+                    <NavigationLink
+                        to='/events'
+                        isActive={!!useRouteMatch('/events')}
+                    >
+                        Events
+                    </NavigationLink>
                 </li>
             </ul>
         </nav>

@@ -26,9 +26,9 @@ const NavigationSub: FC<NavigationSubProps> = ({ navigationItems }) => {
     return (
         <nav className={classes.navigationSub}>
             <ul>
-                {navigationItems.map((navigationItem) => {
+                {navigationItems.map((navigationItem: NavigationItem, index: number) => {
                     return (
-                        <li>
+                        <li key={index}>
                             <Link to={navigationItem.to}>{navigationItem.title}</Link>
                         </li>
                     );
