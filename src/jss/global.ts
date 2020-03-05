@@ -15,7 +15,7 @@ const globalStyles = {
 			color: colors.black,
 			minHeight: '100%',
 			position: 'relative',
-			...fonts.robotoRegular,
+			...fonts.openSansRegular,
 		},
 		hr: {
 			margin: 0,
@@ -26,31 +26,31 @@ const globalStyles = {
 		/* ----------------------------------------------------------- */
 		h1: {
 			...fonts.xxl,
-			...fonts.robotoRegular,
+			...fonts.openSansRegular,
 		},
 		h2: {
 			...fonts.xl,
-			...fonts.robotoRegular,
+			...fonts.openSansRegular,
 		},
 		h3: {
 			...fonts.l,
-			...fonts.robotoRegular,
+			...fonts.openSansRegular,
 		},
 		h4: {
 			...fonts.m,
-			...fonts.robotoBold,
+			...fonts.openSansBold,
 		},
 		h5: {
 			...fonts.s,
-			...fonts.robotoMedium,
+			...fonts.openSansSemiBold,
 		},
 		h6: {
 			...fonts.xs,
-			...fonts.robotoMedium,
+			...fonts.openSansSemiBold,
 		},
 		p: {
 			...fonts.s,
-			...fonts.robotoRegular,
+			...fonts.openSansRegular,
 		},
 	},
 };

@@ -1,14 +1,14 @@
-const roboto = {
-	fontFamily: '"Roboto", sans-serif',
+const openSans = {
+	fontFamily: '"Open Sans", sans-serif;',
 	weights: {
 		regular: 400,
-		medium: 500,
+		semiBold: 600,
 		bold: 700,
 	},
 };
 
 const fonts = {
-	...roboto,
+	...openSans,
 	xxs: {
 		fontSize: '1.2rem',
 		lineHeight: '1.6rem',
@@ -37,17 +37,17 @@ const fonts = {
 		fontSize: '3.6rem',
 		lineHeight: '4.8rem',
 	},
-	robotoRegular: {
-		fontFamily: roboto.fontFamily,
-		fontWeight: roboto.weights.regular,
+	openSansRegular: {
+		fontFamily: openSans.fontFamily,
+		fontWeight: openSans.weights.regular,
 	},
-	robotoMedium: {
-		fontFamily: roboto.fontFamily,
-		fontWeight: roboto.weights.medium,
+	openSansSemiBold: {
+		fontFamily: openSans.fontFamily,
+		fontWeight: openSans.weights.semiBold,
 	},
-	robotoBold: {
-		fontFamily: roboto.fontFamily,
-		fontWeight: roboto.weights.bold,
+	openSansBold: {
+		fontFamily: openSans.fontFamily,
+		fontWeight: openSans.weights.bold,
 	},
 };
 

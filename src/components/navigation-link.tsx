@@ -12,7 +12,7 @@ const useNavigationLinkStyles = createUseStyles({
 	navigationLink: ({ isActive }: UseNavigationLinkStylesProps) => ({
 		backgroundColor: isActive ? colors.gray400 : 'transparent',
 		'& a': {
-			padding: 16,
+			padding: 10,
 			display: 'block',
 			color: colors.black,
 		},
