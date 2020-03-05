@@ -7,10 +7,14 @@ import colors from '@/jss/colors';
 
 const useNavigationSubStyles = createUseStyles({
 	navigationSub: {
-		padding: '8px 16px',
 		display: 'flex',
+		overflowX: 'auto',
+		padding: '8px 16px',
 		backgroundColor: colors.white,
 		borderBottom: `1px solid ${colors.gray200}`,
+	},
+	subNavItem: {
+		whiteSpace: 'nowrap',
 	},
 });
 
@@ -31,7 +35,11 @@ const NavigationSub: FC<NavigationSubProps> = ({ navigationItems }) => {
 			{navigationItems.map(
 				(navigationItem: NavigationItem, index: number) => {
 					return (
-						<NavigationLink key={index} to={navigationItem.to}>
+						<NavigationLink
+							key={index}
+							to={navigationItem.to}
+							className={classes.subNavItem}
+						>
 							{navigationItem.title}
 						</NavigationLink>
 					);
