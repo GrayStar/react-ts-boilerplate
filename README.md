@@ -6,7 +6,7 @@ In the project directory, you can run:
 
 ### `npm run dev`
 
-Runs the app in the react-app in development mode.<br />
+Runs the app in development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The browser will hot reload on save.<br />
@@ -48,8 +48,8 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 ### `npm run start`
 
 Starts the node server.<br />
-Server runs at locally on port `8080`.
+Server runs locally on port `8080`.
 
-The node server is currently only used to populate configuration (`process.env`) variables at render time in production. It does not need to be running during local development, as default configuration variables are provided by `@/lib/config/constants`.
+The node server is currently only used to populate configuration (`process.env`) variables at run time in production. It does not need to be running during local development, as default configuration variables are provided by `@/lib/config/constants`.
 
-If you ever need to test your code against the server, create a production build of the react app using `npm run build`. Then start the node server point your browser to [http://localhost:8080](http://localhost:8080).
+If you ever need to test your code against the server, create a production build of the react app using `npm run build`. Then start the node server and point your browser to [http://localhost:8080](http://localhost:8080).
