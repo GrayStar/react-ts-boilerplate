@@ -3,9 +3,9 @@ import { createUseStyles } from 'react-jss';
 
 import { ThemeConfig } from '@/contexts/theme-context';
 import NavigationMain from '@/components/navigation-main';
+import NavigationUtility from '@/components/navigation-utility';
 
 import colors from '@/jss/colors';
-import { Link } from 'react-router-dom';
 
 const useHeaderStyles = createUseStyles((theme: ThemeConfig) => ({
 	header: {
@@ -26,11 +26,7 @@ const Header: FC = () => {
 		<header className={classes.header}>
 			<div className={classes.headerRow}>
 				<h1>Header</h1>
-				<nav>
-					<Link to="/utility-nav-1">Utility Nav Item 1</Link>
-					<Link to="/utility-nav-2">Utility Nav Item 2</Link>
-					<Link to="/utility-nav-3">Utility Nav Item 3</Link>
-				</nav>
+				<NavigationUtility />
 			</div>
 			<div className={classes.headerRow}>
 				<NavigationMain />

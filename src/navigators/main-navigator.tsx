@@ -12,6 +12,9 @@ import EventsNavigator from '@/navigators/events-navigator';
 import Login from '@/pages/login';
 import Index from '@/pages/index';
 import About from '@/pages/about';
+import Contact from '@/pages/contact';
+import AdvisoryTeam from '@/pages/advisory-team';
+import Account from '@/pages/account';
 import NoMatch from '@/pages/no-match';
 
 import { ROUTES } from './routes';
@@ -39,6 +42,16 @@ const Navigator: FC = () => {
 				</PrivateRoute>
 				<PrivateRoute path="/events">
 					<EventsNavigator />
+				</PrivateRoute>
+
+				<PrivateRoute path="/contact">
+					<Contact />
+				</PrivateRoute>
+				<PrivateRoute path="/advisory-team">
+					<AdvisoryTeam />
+				</PrivateRoute>
+				<PrivateRoute path="/account">
+					<Account />
 				</PrivateRoute>
 
 				<Route path="*">
