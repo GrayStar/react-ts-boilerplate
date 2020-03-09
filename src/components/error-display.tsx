@@ -46,11 +46,7 @@ const ErrorDisplay: FC<ErrorDisplayProps> = ({
 			return null;
 		}
 
-		return (
-			<pre className={classes.devError}>
-				{JSON.stringify(error, null, 4)}
-			</pre>
-		);
+		return <pre className={classes.devError}>{JSON.stringify(error, null, 4)}</pre>;
 	}
 
 	return (
@@ -62,14 +58,8 @@ const ErrorDisplay: FC<ErrorDisplayProps> = ({
 			</Row>
 			<Row>
 				<Col>
-					{showBackButton && (
-						<Button onClick={handleGoBackButtonClick}>
-							Go Back
-						</Button>
-					)}
-					{showRetryButton && (
-						<Button onClick={handleRetryClick}>Retry</Button>
-					)}
+					{showBackButton && <Button onClick={handleGoBackButtonClick}>Go Back</Button>}
+					{showRetryButton && <Button onClick={handleRetryClick}>Retry</Button>}
 				</Col>
 			</Row>
 			<Row>

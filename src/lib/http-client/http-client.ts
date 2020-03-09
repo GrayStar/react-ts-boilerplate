@@ -9,12 +9,7 @@ import axios, {
 // Axios TS Definitions:
 // https://github.com/axios/axios/blob/master/index.d.ts
 
-import {
-	ERROR_CODES,
-	errors,
-	ErrorGenerator,
-	ErrorConfig,
-} from '@/lib/http-client/errors';
+import { ERROR_CODES, errors, ErrorGenerator, ErrorConfig } from '@/lib/http-client/errors';
 
 export type HttpConfig = {
 	baseUrl?: string;

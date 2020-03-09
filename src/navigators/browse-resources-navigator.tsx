@@ -37,9 +37,7 @@ const BrowseResourcesNavigator: FC = () => {
 
 			<Switch>
 				<PrivateRoute exact path={NAVIGATOR_ROOT}>
-					<Redirect
-						to={`${NAVIGATOR_ROOT}/strategy-and-organization/research`}
-					/>
+					<Redirect to={`${NAVIGATOR_ROOT}/strategy-and-organization/research`} />
 				</PrivateRoute>
 				<PrivateRoute exact path={`${NAVIGATOR_ROOT}/:topic/:section`}>
 					<p>TODO: Browse Resourses template</p>

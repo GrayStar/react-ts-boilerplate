@@ -46,9 +46,7 @@ const Index: FC = () => {
 							{pokemon.map((pokemon, index: number) => {
 								return (
 									<li key={index}>
-										<Link to={`/about/${pokemon.name}`}>
-											{pokemon.name}
-										</Link>
+										<Link to={`/about/${pokemon.name}`}>{pokemon.name}</Link>
 									</li>
 								);
 							})}

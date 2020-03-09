@@ -13,15 +13,15 @@ const NavigationMain: FC = () => {
 	const classes = useNavigationMainStyles();
 	const [links] = useState([
 		{
-			to: '/browse-resources/strategy-and-organization/research',
+			to: '/browse-resources',
 			title: 'Browse Resources',
 		},
 		{
-			to: '/engagement/dashboard',
+			to: '/engagement',
 			title: 'Engagement',
 		},
 		{
-			to: '/events/browse-events',
+			to: '/events',
 			title: 'Events',
 		},
 	]);

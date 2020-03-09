@@ -32,19 +32,17 @@ const NavigationSub: FC<NavigationSubProps> = ({ navigationItems }) => {
 
 	return (
 		<nav className={classes.navigationSub}>
-			{navigationItems.map(
-				(navigationItem: NavigationItem, index: number) => {
-					return (
-						<NavigationLink
-							key={index}
-							to={navigationItem.to}
-							className={classes.subNavItem}
-						>
-							{navigationItem.title}
-						</NavigationLink>
-					);
-				}
-			)}
+			{navigationItems.map((navigationItem: NavigationItem, index: number) => {
+				return (
+					<NavigationLink
+						key={index}
+						to={navigationItem.to}
+						className={classes.subNavItem}
+					>
+						{navigationItem.title}
+					</NavigationLink>
+				);
+			})}
 		</nav>
 	);
 };
