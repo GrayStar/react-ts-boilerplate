@@ -7,6 +7,7 @@
 		"cheerio": "^1.0.0-rc.3",
 		"dotenv": "^8.2.0",
 		"express": "^4.17.1",
+		"husky": "^4.2.3",
 		"js-cookie": "^2.2.1",
 		"react": "^16.13.0",
 		"react-bootstrap": "^1.0.0-beta.17",
@@ -22,6 +23,7 @@
 		"dev": "react-app-rewired start",
 		"build": "react-app-rewired build",
 		"test": "react-app-rewired test",
+		"test:static": "CI=true react-app-rewired test --env=jsdom",
 		"eject": "react-app-rewired eject",
 		"start": "node server.js"
 	},
@@ -57,6 +59,11 @@
 	"jest": {
 		"moduleNameMapper": {
 			"^@/(.*)$": "<rootDir>/src/$1"
+		}
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "npm run test:static"
 		}
 	}
 }
