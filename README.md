@@ -19,6 +19,13 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 jest configuration can be found in the package.json.
 
+### `npm run test:static`
+
+Launches jest in static mode.<br />
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+jest configuration can be found in the package.json.
+
 ### `npm run build`
 
 Builds the app for production to the `build` folder.<br />
